@@ -16,10 +16,14 @@
 <% content_for :title, "Todos" %>
 
 <section class="block max-w-md w-full mx-auto bg-zinc-200 py-8 px-4 border border-gray-200 rounded-md shadow-sm">
-  <form class="flex justify-between items-center">
-    <input type="text" class="rounded-md">
-    <button class="btn">search</button>
+  <form action="<%= todos_path %>" method="get" class="flex justify-between items-center">
+    <input type="text" name="query" placeholder="Search todos" class="rounded-md">
+    <div class="flex gap-2">
+      <button type="submit" class="btn">Search</button>
+      <%= link_to "Reset", todos_path, class: "btn bg-orange-300" %>
+    </div>
   </form>
+
   <hr class="my-4">
   <div class="flex justify-between items-center mb-4">
     <h1 class="text-3xl font-bold text-orange-600">Todos</h1>
