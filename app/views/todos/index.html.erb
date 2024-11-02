@@ -15,10 +15,9 @@
 
   <div id="todos">
     <% @todos.each do |todo| %>
-      <%= render todo %>
-      <p>
-        <%= link_to "Show this todo", todo %>
-      </p>
+      <%= link_to todo do %>
+        <%= render todo %>
+      <% end %>
     <% end %>
   </div>
 </section>
