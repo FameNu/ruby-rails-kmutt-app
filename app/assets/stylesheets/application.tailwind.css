@@ -11,3 +11,9 @@
 }
 
 */
+
+@layer components {
+  * {
+    @apply select-none;
+  }
+}
