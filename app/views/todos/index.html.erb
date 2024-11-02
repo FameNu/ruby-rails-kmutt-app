@@ -2,7 +2,10 @@
 
 <% content_for :title, "Todos" %>
 
-<h1>Todos</h1>
+<div class="flex justify-between items-center">
+  <h1 class="text-3xl font-bold">Todos</h1>
+  <%= link_to "New todo", new_todo_path, class:"btn" %>
+</div>
 
 <div id="todos">
   <% @todos.each do |todo| %>
@@ -12,5 +15,3 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New todo", new_todo_path %>
