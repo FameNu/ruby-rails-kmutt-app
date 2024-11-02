@@ -3,7 +3,7 @@
 <% content_for :title, "Todos" %>
 
 <section class="block max-w-md w-full mx-auto bg-zinc-200 py-8 px-4 border border-gray-200 rounded-md shadow-sm">
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center mb-4">
     <h1 class="text-3xl font-bold text-orange-600">Todos</h1>
     <%= link_to new_todo_path, class: "border border-orange-600 px-2 py-2 rounded-full text-orange-600 hover:bg-orange-600 hover:text-white" do %>
       <span class="sr-only">Add</span>
@@ -13,10 +13,10 @@
     <% end %>
   </div>
 
-  <div id="todos">
+  <div id="todos" class="flex flex-col gap-4">
     <% @todos.each do |todo| %>
       <%= link_to todo do %>
-        <%= render todo %>
+        <%= render todo, class:"cusor-pointer" %>
       <% end %>
     <% end %>
   </div>
