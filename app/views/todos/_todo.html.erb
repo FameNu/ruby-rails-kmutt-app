@@ -6,7 +6,14 @@
 
   <p class="w-fit">
     <strong>Completed:</strong>
-    <%= todo.completed %>
+    <span class="<%= todo.completed? ? "text-green-500" : "text-red-500"%>">
+      <%= todo.completed === "completed" ? "Completed" : "Not completed" %>
+    </span>
+  </p>
+
+  <p>
+    <strong>Assignees:</strong>
+    <%= todo.assignees %>
   </p>
 
 </div>
