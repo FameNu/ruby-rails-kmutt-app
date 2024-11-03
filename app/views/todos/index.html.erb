@@ -20,7 +20,7 @@
         <h2 class="text-xl font-bold text-orange-600">New Todo</h2>
         <%= link_to "Close X", todos_path, class: "text-gray-600 hover:text-gray-900 fond-bold"%>
       </div>
-      <%= render "form", todo: @todo %>
+      <%= render "form", todo: Todo.new %>
     </section>
   </div>
 <% end %>
@@ -33,7 +33,7 @@
   <hr class="my-4">
   <div class="flex justify-between items-center mb-4">
     <h1 class="text-3xl font-bold text-orange-600">Todos</h1>
-    <%= link_to new_todo_path, class: "border border-orange-600 px-2 py-2 rounded-full text-orange-600 hover:bg-orange-600 hover:text-white" do %>
+    <%= link_to todos_path(show_modal: true), class: "border border-orange-600 px-2 py-2 rounded-full text-orange-600 hover:bg-orange-600 hover:text-white" do %>
       <span class="sr-only">Add</span>
       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 448 512" fill="currentColor" title="Add todo">
         <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/>

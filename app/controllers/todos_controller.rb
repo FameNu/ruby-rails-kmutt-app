@@ -8,6 +8,8 @@ class TodosController < ApplicationController
     else
       @todos = Todo.all
     end
+
+    @show_modal = params[:show_modal] == "true"
   end
 
   # GET /todos/1 or /todos/1.json
@@ -30,10 +32,13 @@ class TodosController < ApplicationController
     respond_to do |format|
       if @todo.save
         format.html { redirect_to todos_path, notice: "Todo was successfully created." }
-        format.json { render :show, status: :created, location: @todo }
+        # format.json { render :show, status: :created, location: @todo }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @todo.errors, status: :unprocessable_entity }
+        # format.html { render :new, status: :unprocessable_entity }
+        # format.json { render json: @todo.errors, status: :unprocessable_entity }
+        @show_modal = true
+        @todos = Todo.all
+        format.html { render :index }
       end
     end
   end
