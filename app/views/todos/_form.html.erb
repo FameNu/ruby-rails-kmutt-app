@@ -21,6 +21,11 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :assignees %>
+    <%= form.text_field :assignees, placeholder: "Assign to..." %>
+  </div>
+
   <div class="rounded-lg px-3 py-2 bg-orange-600 w-fit text-white hover:bg-orange-800 ">
     <%= form.submit %>
   </div>
